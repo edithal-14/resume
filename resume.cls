@@ -57,7 +57,7 @@
 % \printname is used to print the name as a page header
 \def \printname {
   \begingroup
-    \hfil{\MakeUppercase{\namesize\bf \@name}}\hfil
+    \hfil{\namesize\bf \@name}\hfil
     \nameskip\break
   \endgroup
 }
@@ -81,7 +81,7 @@
 % Used to create large resume section
 \newenvironment{rSection}[1]{
   \sectionskip
-  \MakeUppercase{\bf #1}
+  {\bf #1}
   \sectionlineskip
   \hrule
   \begin{list}{}{
@@ -98,10 +98,10 @@
   %%    Employer (bold)                     Dates (regular)    %%
   %%    Title (emphasis)                Location (emphasis)    %%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  {\bf #1}                 \hfill                  {    #2}% Stop a space
+  {\bf #1}                 \hfill                  {\bf    #2}% Stop a space
   \ifthenelse{\equal{#3}{}}{}{
   \\
-  {\em #3}                 \hfill                  {\em #4}% Stop a space
+  {\bf #3}                 \hfill                  {\bf #4}% Stop a space
   }\smallskip
   % \cdot used for bullets, items non-indented
   \begin{list}{$\cdot$}{\leftmargin=0em}
